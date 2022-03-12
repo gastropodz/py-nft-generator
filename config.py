@@ -8,7 +8,7 @@ layers = [
     {
         'id': 1,
         'folder': 'Background',
-        'rarities': [3, 14, 14, 14, 14, 14, 3, 8, 8, 8],
+        'rarities': [5, 10, 1, 2, 7, 4, 71],
         'required': True,
 
     },
@@ -16,35 +16,35 @@ layers = [
     {
         'id': 2,
         'folder': 'Body',
-        'rarities': [1, 10, 65, 20, 4],
+        'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 6, 6, 1, 1, 1, 1, 1, 1],
         'required': True,
     },
 
     {
         'id': 3,
-        'folder': 'Bottom_Accessory',
-        'rarities': [20, 10, 20, 50],
+        'folder': 'BodyPattern',
+        'rarities': [2, 5, 1, 24, 12, 10, 7, 39],
         'required': False,
     },
 
     {
         'id': 4,
         'folder': 'Eyes',
-        'rarities': [2, 8, 14, 2, 1, 7, 3, 4, 7, 3, 5, 12, 12, 5, 9, 6],
+        'rarities': [1, 21, 3, 1, 2, 69, 3],
         'required': True,
     },
 
     {
         'id': 5,
         'folder': 'Mouth',
-        'rarities': [14, 12, 5, 12, 2, 14, 16, 10, 14, 1],
+        'rarities': [23, 2, 73, 2],
         'required': True,
     },
 
     {
         'id': 6,
-        'folder': 'Top_Accessory',
-        'rarities': [14, 9, 6, 4, 7, 1, 5, 5, 6, 3, 8, 8, 12, 12],
+        'folder': 'Transportation',
+        'rarities': [8, 8, 5, 7, 2, 1, 14, 4, 1, 4, 6, 10, 5, 2, 23],
         'required': False,
     }
 ]

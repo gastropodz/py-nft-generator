@@ -77,7 +77,9 @@ def create_metadata(description: str, token_name: str, edition: int, final_layer
     for layer in final_layers:
 
         attributes_dict = dict()
-        data = layer.split('/')
+        data = layer.split('\\')
+        # might be needed for linux, im using above with windows.
+        #data = layer.split('/')
 
         # Add the trait category as a key in dict
         attributes_dict['trait_type'] = data[-2]
@@ -112,7 +114,7 @@ def create_image(token_name: str, edition: int, final_layers: list):
 
             # TODO: work out why some collections require paste rather than alpha composite.
             # background_layer.paste(img, img)
-            background_layer.alpha_composite(img)
+            background_layer.paste(img, img)
 
     background_layer.save(f'build/images/{token_name}-{edition}.png')
 
