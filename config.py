@@ -55,5 +55,12 @@ layers = [
         'folder': 'Transportation',
         'rarities': [8, 8, 5, 7, 2, 1, 14, 4, 1, 4, 6, 10, 5, 2, 23],
         'required': False,
+    },
+
+    {
+        'id': 8,
+        'folder': 'Accessories',
+        'rarities': [1, 19, 14, 2, 17, 7, 12, 1, 21, 4, 2],
+        'required': True,
     }
 ]
