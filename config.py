@@ -8,7 +8,7 @@ layers = [
     {
         'id': 1,
         'folder': 'Background',
-        'rarities': [5, 10, 1, 2, 7, 4, 71],
+        'rarities': [5, 10, 1, 2, 7, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
         'required': True,
 
     },
@@ -16,13 +16,15 @@ layers = [
     {
         'id': 2,
         'folder': 'Body',
-        'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 6, 6, 1, 1, 1, 1, 1, 1],
+        'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1],
+        #'folder': 'Body_Rare',
+        #'rarities': [1, 1, 1, 1, 1, 1, 1, 1],
         'required': True,
     },
 
     {
         'id': 3,
-        'folder': 'BodyPattern',
+        'folder': 'Body_Pattern',
         'rarities': [2, 5, 1, 24, 12, 10, 7, 39],
         'required': False,
     },

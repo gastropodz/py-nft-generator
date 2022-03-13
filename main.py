@@ -65,7 +65,7 @@ def create_metadata(description: str, token_name: str, edition: int, final_layer
     metadata = {
         'name': f'{token_name} #{edition}',
         'description': description,
-        'image': f'ipfs://baseURI/{edition}.png',
+        'resource': f'ipfs://baseURI/{edition}.png',
         'edition': edition,
         'attributes': [
             #{'trait_type': '', 'value': ''},
