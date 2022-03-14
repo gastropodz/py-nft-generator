@@ -48,6 +48,46 @@ def join_layers(assets: str) -> tuple():
         # Choose an image from the given subdirectory based on rarities
         img = random.choices(sorted_layers, weights=(layer['rarities']))
 
+        # Exceptions - sometimes a body for example, we wont want the body overlay
+        # Body_Pattern Exclusions
+        if layer['folder'] == 'Body_Pattern':
+            # Rare_Cyborg.png
+            if 'Rare_Cyborg.png' in final_layers[1]:
+                img = ['None']
+            # Large_Rare_Cheetah.png
+            if 'Large_Rare_Cheetah.png' in final_layers[1]:
+                img = ['None']
+            # Medium_Rare_Cheetah.png
+            if 'Medium_Rare_Cheetah.png' in final_layers[1]:
+                img = ['None']
+            # Small_Rare_Cheetah.png
+            if 'Small_Rare_Cheetah.png' in final_layers[1]:
+                img = ['None']
+            # Rare_Pixelated.png
+            if 'Rare_Pixelated.png' in final_layers[1]:
+                img = ['None']
+            # Rare_Reptilian.png
+            if 'Rare_Reptilian.png' in final_layers[1]:
+                img = ['None']    
+            # Rare_Falcon.png
+            if 'Rare_Falcon.png' in final_layers[1]:
+                img = ['None']
+
+        # Mouth Exclusions
+        if layer['folder'] == 'Mouth':
+            # Rare_Falcon.png
+            if 'Rare_Falcon.png' in final_layers[1]:
+                img = ['None']
+            # Rare_Cyborg.png
+            if 'Rare_Cyborg.png' in final_layers[1]:
+                img = ['None']
+
+        # Certain Neck Exclusions
+        if layer['folder'] == 'Accessories':
+            # Rare_Cyborg.png - Tattoo.png
+            if 'Rare_Cyborg.png' in final_layers[1] and 'Tattoo.png' in img[0]:
+                img = ['None']
+
         # Store each chosen image path to a list
         final_layers.append(os.path.join(layer_path, img[0]))
 
