@@ -1,5 +1,7 @@
 """ Main process module - Generates layered image and metadata files """
 
+from collections import Counter
+import csv
 import json
 import os
 import random
@@ -170,9 +172,23 @@ def main():
         This will appear as the name for each image\n')
     description = input('Enter the description for your tokens\n')
     amount = int(input('Enter the amount of images you would like created\n'))
+    mock = input('Do you want to do a mock run for stats? (Yes or leave blank)\n')
 
     edition = 1
     dna_set = set()
+
+
+    BackgroundList = list()
+    BodyList = list()
+    BodyPatternList = list()
+    EyesList = list()
+    MouthList = list()
+    AirList = list()
+    WeaponList = list()
+    ShellsList = list()
+    TransaportationList = list()
+    AccessoriesList = list()
+    PropellentList = list()
 
     make_dirs()
     assets_directory = os.path.join(os.getcwd(), 'assets')
@@ -186,10 +202,82 @@ def main():
             print(f'DNA already exists! Retrying token {edition}')
             continue
 
-        create_metadata(description, token_name, edition, final_layers)
-        create_image(token_name, edition, final_layers)
+        if mock != 'Yes':
+            create_metadata(description, token_name, edition, final_layers)
+        
+        if mock != 'Yes':
+            create_image(token_name, edition, final_layers)
+        
         dna_set.add(final_layers)
+        
+        # Trying to get stats
+        BackgroundList.append(final_layers[0].split('\\')[-1])
+        BodyList.append(final_layers[1].split('\\')[-1])
+        BodyPatternList.append(final_layers[2].split('\\')[-1])
+        EyesList.append(final_layers[3].split('\\')[-1])
+        MouthList.append(final_layers[4].split('\\')[-1])
+        AirList.append(final_layers[5].split('\\')[-1])
+        WeaponList.append(final_layers[6].split('\\')[-1])
+        ShellsList.append(final_layers[7].split('\\')[-1])
+        TransaportationList.append(final_layers[8].split('\\')[-1])
+        AccessoriesList.append(final_layers[9].split('\\')[-1])
+        PropellentList.append(final_layers[10].split('\\')[-1])
         edition += 1
+
+    print('Background Stats')
+    cnt = Counter(BackgroundList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Body Stats')
+    cnt = Counter(BodyList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('BodyPattern Stats')
+    cnt = Counter(BodyPatternList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Eyes Stats')
+    cnt = Counter(EyesList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Mouth Stats')
+    cnt = Counter(MouthList)
+    for value, count in cnt.most_common():
+         print(value, count)
+    
+    print('Air Stats')
+    cnt = Counter(AirList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Weapon Stats')
+    cnt = Counter(WeaponList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Shells Stats')
+    cnt = Counter(ShellsList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Transaportation Stats')
+    cnt = Counter(TransaportationList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Propellent Stats')
+    cnt = Counter(PropellentList)
+    for value, count in cnt.most_common():
+         print(value, count)
+
+    print('Accessories Stats')
+    cnt = Counter(AccessoriesList)
+    for value, count in cnt.most_common():
+         print(value, count)
 
     print('Image creation complete')
 

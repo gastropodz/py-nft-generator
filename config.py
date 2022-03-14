@@ -8,7 +8,10 @@ layers = [
     {
         'id': 1,
         'folder': 'Background',
-        'rarities': [5, 10, 1, 2, 7, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+        # to use this one delete the solid bgs
+        'rarities': [5, 40, 1, 2, 40, 4],
+        # inc solid backgrounds
+        #'rarities': [5, 10, 1, 2, 7, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
         'required': True,
 
     },
@@ -16,7 +19,7 @@ layers = [
     {
         'id': 2,
         'folder': 'Body',
-        'rarities': [15, 15, 15, 15, 1, 2, 2, 2, 2, 2, 15, 15, 15, 15, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 15, 15, 15, 15, 1, 2, 2, 2, 2, 2],
+        'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1],
         #'folder': 'Body_Rare',
         #'rarities': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         'required': True,
