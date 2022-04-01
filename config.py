@@ -8,12 +8,8 @@ layers = [
     {
         'id': 1,
         'folder': 'Background',
-        # to use this one delete the solid bgs
-        'rarities': [5, 40, 1, 2, 40, 4],
-        # inc solid backgrounds
-        #'rarities': [5, 10, 1, 2, 7, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+        'rarities': [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 1, 2, 10, 4],
         'required': True,
-
     },
 
     {
@@ -42,7 +38,7 @@ layers = [
     {
         'id': 5,
         'folder': 'Mouth',
-        'rarities': [23, 2, 73, 2],
+        'rarities': [2, 17, 2, 2, 2, 2, 50, 2, 2, 2],
         'required': True,
     },
 
@@ -77,7 +73,7 @@ layers = [
     {
         'id': 10,
         'folder': 'Accessories',
-        'rarities': [1, 19, 14, 2, 17, 7, 12, 1, 21, 4, 2],
+        'rarities': [1, 19, 14, 2, 17, 7, 12, 1, 7, 7, 7, 4, 2],
         'required': True,
     },
 
