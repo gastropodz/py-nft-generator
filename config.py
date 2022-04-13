@@ -14,10 +14,10 @@ layers = [
 
     {
         'id': 2,
-        'folder': 'Body',
-        'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1],
-        #'folder': 'Body_Rare',
-        #'rarities': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        #'folder': 'Body',
+        #'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1],
+        'folder': 'Body_Rare',
+        'rarities': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         'required': True,
     },
 
@@ -81,6 +81,13 @@ layers = [
         'id': 11,
         'folder': 'Propellent',
         'rarities': [8, 7, 5, 2, 6, 1, 4, 67],
+        'required': False,
+    },
+
+    {
+        'id': 12,
+        'folder': 'Wing',
+        'rarities': [0, 0, 100],
         'required': False,
     }
 ]

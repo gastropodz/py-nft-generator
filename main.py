@@ -90,6 +90,21 @@ def join_layers(assets: str) -> tuple():
             if 'Rare_Cyborg.png' in final_layers[1] and 'Tattoo.png' in img[0]:
                 img = ['None']
 
+        # exclude Propellent when Shells has exhaust
+        if layer['folder'] == 'Propellent':
+            # Rare_Cyborg.png - Tattoo.png
+            if 'Exhaust' in final_layers[7]:
+                img = ['None']        
+
+        # Add wing for Falcon
+        if layer['folder'] == 'Wing':
+            # Rare_Falcon.png - FalconWing.png
+            if 'Rare_Falcon.png' in final_layers[1]:
+                img = ['FalconWing.png']
+            # Rare_Sailfish.png - SailfishWing.png
+            if 'Rare_Sailfish.png' in final_layers[1]:
+                img = ['SailfishWing.png']
+
         # Store each chosen image path to a list
         final_layers.append(os.path.join(layer_path, img[0]))
 
