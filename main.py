@@ -54,40 +54,40 @@ def join_layers(assets: str) -> tuple():
         # Body_Pattern Exclusions
         if layer['folder'] == 'Body_Pattern':
             # Rare_Cyborg.png
-            if 'Rare_Cyborg.png' in final_layers[1]:
+            if 'Rare_Cyborg.png' in final_layers[2]:
                 img = ['None']
             # Large_Rare_Cheetah.png
-            if 'Large_Rare_Cheetah.png' in final_layers[1]:
+            if 'Large_Rare_Cheetah.png' in final_layers[2]:
                 img = ['None']
             # Medium_Rare_Cheetah.png
-            if 'Medium_Rare_Cheetah.png' in final_layers[1]:
+            if 'Medium_Rare_Cheetah.png' in final_layers[2]:
                 img = ['None']
             # Small_Rare_Cheetah.png
-            if 'Small_Rare_Cheetah.png' in final_layers[1]:
+            if 'Small_Rare_Cheetah.png' in final_layers[2]:
                 img = ['None']
             # Rare_Pixelated.png
-            if 'Rare_Pixelated.png' in final_layers[1]:
+            if 'Rare_Pixelated.png' in final_layers[2]:
                 img = ['None']
             # Rare_Reptilian.png
-            if 'Rare_Reptilian.png' in final_layers[1]:
+            if 'Rare_Reptilian.png' in final_layers[2]:
                 img = ['None']    
             # Rare_Falcon.png
-            if 'Rare_Falcon.png' in final_layers[1]:
+            if 'Rare_Falcon.png' in final_layers[2]:
                 img = ['None']
 
         # Mouth Exclusions
         if layer['folder'] == 'Mouth':
             # Rare_Falcon.png
-            if 'Rare_Falcon.png' in final_layers[1]:
+            if 'Rare_Falcon.png' in final_layers[2]:
                 img = ['None']
             # Rare_Cyborg.png
-            if 'Rare_Cyborg.png' in final_layers[1]:
+            if 'Rare_Cyborg.png' in final_layers[2]:
                 img = ['None']
 
         # Certain Neck Exclusions
         if layer['folder'] == 'Accessories':
             # Rare_Cyborg.png - Tattoo.png
-            if 'Rare_Cyborg.png' in final_layers[1] and 'Tattoo.png' in img[0]:
+            if 'Rare_Cyborg.png' in final_layers[2] and 'Tattoo.png' in img[0]:
                 img = ['None']
 
         # exclude Propellent when Shells has exhaust
@@ -99,11 +99,14 @@ def join_layers(assets: str) -> tuple():
         # Add wing for Falcon
         if layer['folder'] == 'Wing':
             # Rare_Falcon.png - FalconWing.png
-            if 'Rare_Falcon.png' in final_layers[1]:
+            if 'Rare_Falcon.png' in final_layers[2]:
                 img = ['FalconWing.png']
             # Rare_Sailfish.png - SailfishWing.png
-            if 'Rare_Sailfish.png' in final_layers[1]:
+            if 'Rare_Sailfish.png' in final_layers[2]:
                 img = ['SailfishWing.png']
+            # Parachute.png - ParachuteTop.png
+            if 'Parachute.png' in final_layers[6]:
+                img = ['ParachuteTop.png']            
 
         # Store each chosen image path to a list
         final_layers.append(os.path.join(layer_path, img[0]))

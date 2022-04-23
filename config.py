@@ -8,52 +8,52 @@ layers = [
     {
         'id': 1,
         'folder': 'Background',
-        'rarities': [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 1, 2, 10, 4],
+        'rarities': [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 1, 2, 10, 4],
         'required': True,
-    },
-
+    },   
+    
     {
         'id': 2,
-        #'folder': 'Body',
-        #'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1],
-        'folder': 'Body_Rare',
-        'rarities': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        'folder': 'Weapon',
+        'rarities': [8, 19, 12, 6, 2, 5, 1, 17, 1, 2, 2, 7, 14, 2, 1],
         'required': True,
     },
 
     {
         'id': 3,
+        'folder': 'Body',
+        'rarities': [7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1],
+        #'folder': 'Body_Rare',
+        #'rarities': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        'required': True,
+    },
+
+    {
+        'id': 4,
         'folder': 'Body_Pattern',
         'rarities': [2, 5, 1, 24, 12, 10, 7, 39],
         'required': False,
     },
 
     {
-        'id': 4,
+        'id': 5,
         'folder': 'Eyes',
         'rarities': [1, 21, 3, 1, 2, 69, 3],
         'required': True,
     },
 
     {
-        'id': 5,
+        'id': 6,
         'folder': 'Mouth',
         'rarities': [2, 17, 2, 2, 2, 2, 50, 2, 2, 2],
         'required': True,
     },
 
     {
-        'id': 6,
+        'id': 7,
         'folder': 'Air',
         'rarities': [6, 1, 2, 8, 4, 5, 7, 67],
         'required': False,
-    },    
-    
-    {
-        'id': 7,
-        'folder': 'Weapon',
-        'rarities': [8, 19, 12, 6, 2, 5, 1, 17, 1, 2, 2, 7, 14, 2, 1],
-        'required': True,
     },
 
     {
@@ -87,7 +87,7 @@ layers = [
     {
         'id': 12,
         'folder': 'Wing',
-        'rarities': [0, 0, 100],
+        'rarities': [0, 0, 0, 100],
         'required': False,
     }
 ]
