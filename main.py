@@ -90,13 +90,21 @@ def join_layers(assets: str) -> tuple():
             if 'Rare_Cyborg.png' in final_layers[2] and 'Tattoo.png' in img[0]:
                 img = ['None']
 
-        # exclude Propellent when Shells has exhaust
+        # Exclude Propellent
         if layer['folder'] == 'Propellent':
-            # Rare_Cyborg.png - Tattoo.png
+            # If the shell is exhaust, then delete propellant for this build
             if 'Exhaust' in final_layers[7]:
-                img = ['None']        
+                img = ['None']
+            # For Propeller.png and Vortex.png we also need to exlcude them from the spoiler body
+            if 'Spoiler' in final_layers[7] and 'Propeller.png' in img[0]:
+                img = ['None']
+            if 'Spoiler' in final_layers[7] and 'Vortex.png' in img[0]:
+                img = ['None']
+            # For Propeller.png we need to check Weapoin layer for Salt_Dumptruck.png and exclude it.
+            if 'Salt_Dumptruck.png' in final_layers[1] and 'Propeller.png' in img[0]:
+                img = ['None']
 
-        # Add wing for Falcon
+        # Add additional layer in things that need it.
         if layer['folder'] == 'Wing':
             # Rare_Falcon.png - FalconWing.png
             if 'Rare_Falcon.png' in final_layers[2]:
@@ -230,12 +238,12 @@ def main():
         
         # Trying to get stats
         BackgroundList.append(final_layers[0].split('\\')[-1])
-        BodyList.append(final_layers[1].split('\\')[-1])
-        BodyPatternList.append(final_layers[2].split('\\')[-1])
-        EyesList.append(final_layers[3].split('\\')[-1])
-        MouthList.append(final_layers[4].split('\\')[-1])
-        AirList.append(final_layers[5].split('\\')[-1])
-        WeaponList.append(final_layers[6].split('\\')[-1])
+        WeaponList.append(final_layers[1].split('\\')[-1])
+        BodyList.append(final_layers[2].split('\\')[-1])
+        BodyPatternList.append(final_layers[3].split('\\')[-1])
+        EyesList.append(final_layers[4].split('\\')[-1])
+        MouthList.append(final_layers[5].split('\\')[-1])
+        AirList.append(final_layers[6].split('\\')[-1])
         ShellsList.append(final_layers[7].split('\\')[-1])
         TransaportationList.append(final_layers[8].split('\\')[-1])
         AccessoriesList.append(final_layers[9].split('\\')[-1])
