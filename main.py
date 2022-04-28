@@ -106,9 +106,6 @@ def join_layers(assets: str) -> tuple():
 
         # Add additional layer in things that need it.
         if layer['folder'] == 'Wing':
-            # Rare_Falcon.png - FalconWing.png
-            if 'Rare_Falcon.png' in final_layers[2]:
-                img = ['FalconWing.png']
             # Rare_Sailfish.png - SailfishWing.png
             if 'Rare_Sailfish.png' in final_layers[2]:
                 img = ['SailfishWing.png']
