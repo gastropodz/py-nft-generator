@@ -39,6 +39,10 @@ def join_layers(assets: str) -> tuple():
 
         # Joins absolute path with each layer directory for use in next step
         layer_path = os.path.join(assets, layer['folder'])
+        
+        # copy out absolute path for use for replacement of plate image later
+        if layer['folder'] == 'Background':
+            layer_path_background = os.path.join(assets, layer['folder'])
 
         # Sorts images into alphebetical order for use with rarities
         sorted_layers = sorted(os.listdir(layer_path))
@@ -83,6 +87,46 @@ def join_layers(assets: str) -> tuple():
             # Rare_Cyborg.png
             if 'Rare_Cyborg.png' in final_layers[2]:
                 img = ['None']
+            # If small body, then need to use thin mouths
+            if 'Small' in final_layers[2]:
+                if 'Beard' in img[0]:
+                    img = ['Beard_Thin.png']
+                if 'Braces' in img[0]:
+                    img = ['Braces_Thin.png']
+                if 'Drool' in img[0]:
+                    img = ['Drool_Thin.png']
+                if 'Female_Default' in img[0]:
+                    img = ['Female_Default_Thin.png']  
+                if 'Female_Piercing' in img[0]:
+                    img = ['Female_Piercing_Thin.png']
+                if 'Female_Rare' in img[0]:
+                    img = ['Female_Rare_Thin.png']
+                if 'Female_Smirk' in img[0]:
+                    img = ['Female_Smirk_Thin.png']
+                if 'Gold' in img[0]:
+                    img = ['Gold_Thin.png']
+                if 'Gum' in img[0]:
+                    img = ['Gum_Thin.png']
+                if 'Male_Default' in img[0]:
+                    img = ['Male_Default_Thin.png'] 
+                if 'Male_Rare' in img[0]:
+                    img = ['Male_Rare_Thin.png'] 
+                if 'Male_Smirk' in img[0]:
+                    img = ['Male_Smirk_Thin.png']
+                if 'Onegold' in img[0]:
+                    img = ['Onegold_Thin.png']    
+                if 'Shine' in img[0]:
+                    img = ['Shine_Thin.png']    
+                if 'Smoke' in img[0]:
+                    img = ['Smoke_Thin.png']    
+                if 'Stache' in img[0]:
+                    img = ['Stache_Thin.png']
+                if 'Toothout' in img[0]:
+                    img = ['Toothout_Thin.png']   
+                if 'Tounge' in img[0]:
+                    img = ['Tounge_Thin.png']   
+                if 'Vampire' in img[0]:
+                    img = ['Vampire_Thin.png']         
 
         # Certain Neck Exclusions
         if layer['folder'] == 'Accessories':
@@ -92,26 +136,107 @@ def join_layers(assets: str) -> tuple():
 
         # Exclude Propellent
         if layer['folder'] == 'Propellent':
-            # If the shell is exhaust, then delete propellant for this build
-            if 'Exhaust' in final_layers[7]:
-                img = ['None']
             # For Propeller.png and Vortex.png we also need to exlcude them from the spoiler body
-            if 'Spoiler' in final_layers[7] and 'Propeller.png' in img[0]:
+            if 'Spoiler' in final_layers[5] and 'Propeller.png' in img[0]:
                 img = ['None']
-            if 'Spoiler' in final_layers[7] and 'Vortex.png' in img[0]:
+            if 'Spoiler' in final_layers[5] and 'Vortex.png' in img[0]:
                 img = ['None']
+            if 'Spoiler' in final_layers[5] and 'Exhaust.png' in img[0]:
+                img = ['None']
+            if 'Spoiler' in final_layers[5] and 'Booster2' in img[0]:
+                img = ['None']
+            
+            # Some manifolds and boosters dont go together
+            # Turbinate, Lenticular,  good
+            if 'Manifold' in final_layers[5] and 'Ovate' in final_layers[5] and 'Booster2' in img[0]:
+                img = ['None']
+            if 'Manifold' in final_layers[5] and 'Obconic' in final_layers[5] and 'Booster2' in img[0]:
+                img = ['None']          
+            if 'Manifold' in final_layers[5] and 'Biconic' in final_layers[5] and 'Booster2' in img[0]:
+                img = ['None']    
+            if 'Manifold' in final_layers[5] and 'Trichoid' in final_layers[5] and 'Booster2' in img[0]:
+                img = ['None']    
+
             # For Propeller.png we need to check Weapoin layer for Salt_Dumptruck.png and exclude it.
             if 'Salt_Dumptruck.png' in final_layers[1] and 'Propeller.png' in img[0]:
                 img = ['None']
+            # For Booster2, image is diff depending on the shell
+            if 'Booster2' in img[0]:
+                if 'Biconic' in final_layers[5]:
+                    if 'Conical' in final_layers[5]:
+                        img = ['Booster2_Shell_Biconic_Conical.png']
+                    else:
+                        img = ['Booster2_Shell_Biconic_Spiral.png']
+                if 'Lenticular' in final_layers[5]:
+                    if 'Conical' in final_layers[5]:
+                        img = ['Booster2_Shell_Lenticular_Conical.png']
+                    else:
+                        img = ['Booster2_Shell_Lenticular_Spiral.png']
+                if 'Obconic' in final_layers[5]:
+                    if 'Conical' in final_layers[5]:
+                        img = ['Booster2_Shell_Obconic_Conical.png']
+                    else:
+                        img = ['Booster2_Shell_Obconic_Spiral.png']
+                if 'Ovate' in final_layers[5]:
+                    if 'Conical' in final_layers[5]:
+                        img = ['Booster2_Shell_Ovate_Conical.png']
+                    else:
+                        img = ['Booster2_Shell_Ovate_Spiral.png']
+                if 'Trichoid' in final_layers[5]:
+                    if 'Conical' in final_layers[5]:
+                        img = ['Booster2_Shell_Trichoid_Conical.png']
+                    else:
+                        img = ['Booster2_Shell_Trichoid_Spiral.png']
+                if 'Turbinate' in final_layers[5]:
+                    if 'Conical' in final_layers[5]:
+                        img = ['Booster2_Shell_Turbinate_Conical.png']
+                    else:
+                        img = ['Booster2_Shell_Turbinate_Spiral.png']                
+            # If there is no shell, then we need to set other layers to none. 
+            # if we move air back in the id, this will need changing from 6 to 7 
+            if 'None' in final_layers[5]:
+                img = ['None']
+
+        # If there is no shell, then we need to set other layers to none.
+        if layer['folder'] == 'Shells':
+            if img[0] == 'None':
+                final_layers[1] = os.path.join(layer_path, img[0])
+                # if we move air back in the id, this will need adding
+                #final_layers[5] = os.path.join(layer_path, img[0])
+
+        # Exclude Propellent
+        if layer['folder'] == 'Air':
+            # If there is no shell, then we need to set other layers to none.
+            # this can be removed if we move air back to ID 6  
+            if 'None' in final_layers[5]:
+                img = ['None']            
+
+        # if there is no transportation, and the background is Plate, change to the alternate plate image.
+        if layer['folder'] == 'Transportation':
+            # if background is plate, and ing Bigwheel.png, exclude it and make it no vehicle
+            if 'Bigwheel' in img[0] and 'Plate' in final_layers[0]:
+                img = ['None']
+            # skateboard and salt dumptruck conflict
+            if 'Skateboard' in img[0] and 'Salt_Dumptruck.png' in final_layers[1]:
+                img = ['None']
+            # go kart and taco dont go well together
+            if 'Gokart' in img[0] and 'Taco_Gun.png' in final_layers[1]:
+                img = ['None']
+            if img[0] == 'None' and 'Plate' in final_layers[0]:
+                final_layers[0] = os.path.join(layer_path_background, 'Plate_NoTransportation.png')
+            # i think Skateboard, Tank, Gokart will also look better with the new plate
+            if 'Skateboard' in img[0] and 'Plate' in final_layers[0]:
+                final_layers[0] = os.path.join(layer_path_background, 'Plate_NoTransportation.png')
+            if 'Tank' in img[0] and 'Plate' in final_layers[0]:
+                final_layers[0] = os.path.join(layer_path_background, 'Plate_NoTransportation.png')
+            if 'Gokart' in img[0] and 'Plate' in final_layers[0]:
+                final_layers[0] = os.path.join(layer_path_background, 'Plate_NoTransportation.png')
 
         # Add additional layer in things that need it.
         if layer['folder'] == 'Wing':
             # Rare_Sailfish.png - SailfishWing.png
             if 'Rare_Sailfish.png' in final_layers[2]:
                 img = ['SailfishWing.png']
-            # Parachute.png - ParachuteTop.png
-            if 'Parachute.png' in final_layers[6]:
-                img = ['ParachuteTop.png']            
 
         # Store each chosen image path to a list
         final_layers.append(os.path.join(layer_path, img[0]))
@@ -239,12 +364,12 @@ def main():
         BodyList.append(final_layers[2].split('\\')[-1])
         BodyPatternList.append(final_layers[3].split('\\')[-1])
         EyesList.append(final_layers[4].split('\\')[-1])
-        MouthList.append(final_layers[5].split('\\')[-1])
-        AirList.append(final_layers[6].split('\\')[-1])
-        ShellsList.append(final_layers[7].split('\\')[-1])
-        TransaportationList.append(final_layers[8].split('\\')[-1])
-        AccessoriesList.append(final_layers[9].split('\\')[-1])
-        PropellentList.append(final_layers[10].split('\\')[-1])
+        ShellsList.append(final_layers[5].split('\\')[-1])
+        MouthList.append(final_layers[6].split('\\')[-1])
+        TransaportationList.append(final_layers[7].split('\\')[-1])
+        AccessoriesList.append(final_layers[8].split('\\')[-1])
+        PropellentList.append(final_layers[9].split('\\')[-1])
+        AirList.append(final_layers[10].split('\\')[-1])
         edition += 1
 
     print('Background Stats')
