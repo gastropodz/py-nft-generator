@@ -83,7 +83,7 @@ layers = [
     {
         'id': 11,
         'folder': 'Air',
-        'rarities': [6, 8, 4, 5, 7, 7, 67],
+        'rarities': [6, 8, 4, 5, 7, 67],
         #'rarities': [0, 0, 0, 0, 0, 100, 0],
         'required': False,
     },
