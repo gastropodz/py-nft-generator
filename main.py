@@ -205,11 +205,15 @@ def join_layers(assets: str) -> tuple():
                 #final_layers[5] = os.path.join(layer_path, img[0])
 
         # Exclude Propellent
-        #if layer['folder'] == 'Air':
-            # If there is no shell, then we need to set other layers to none.
-            # this can be removed if we move air back to ID 6  
-            #if 'None' in final_layers[5]:
-            #    img = ['None']            
+        if layer['folder'] == 'Air':
+            if 'Solar' in img[0] and 'Manifold' in final_layers[5]:
+                img = ['None']
+            if 'Solar' in img[0] and 'Spoiler' in final_layers[5]:        
+                img = ['None']
+            if 'Solar' in img[0] and 'Booster2' in final_layers[9]:        
+                img = ['None']
+            if 'Solar' in img[0] and 'Exhaust' in final_layers[9]:        
+                img = ['None']
 
         # if there is no transportation, and the background is Plate, change to the alternate plate image.
         if layer['folder'] == 'Transportation':
