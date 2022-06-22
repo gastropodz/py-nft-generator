@@ -85,8 +85,8 @@ def join_layers(assets: str) -> tuple():
             if 'Rare_Falcon.png' in final_layers[2]:
                 img = ['None']
             # Rare_Cyborg.png
-            if 'Rare_Cyborg.png' in final_layers[2]:
-                img = ['None']
+            #if 'Rare_Cyborg.png' in final_layers[2]:
+            #robot    img = ['None']
             # If small body, then need to use thin mouths
             if 'Small' in final_layers[2]:
                 if 'Beard' in img[0]:
@@ -205,11 +205,11 @@ def join_layers(assets: str) -> tuple():
                 #final_layers[5] = os.path.join(layer_path, img[0])
 
         # Exclude Propellent
-        if layer['folder'] == 'Air':
+        #if layer['folder'] == 'Air':
             # If there is no shell, then we need to set other layers to none.
             # this can be removed if we move air back to ID 6  
-            if 'None' in final_layers[5]:
-                img = ['None']            
+            #if 'None' in final_layers[5]:
+            #    img = ['None']            
 
         # if there is no transportation, and the background is Plate, change to the alternate plate image.
         if layer['folder'] == 'Transportation':
