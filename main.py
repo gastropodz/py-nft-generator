@@ -85,8 +85,8 @@ def join_layers(assets: str) -> tuple():
             if 'Rare_Falcon.png' in final_layers[2]:
                 img = ['None']
             # Rare_Cyborg.png
-            #if 'Rare_Cyborg.png' in final_layers[2]:
-            #robot    img = ['None']
+            if 'Rare_Cyborg.png' in final_layers[2]:
+                img = ['None']
             # If small body, then need to use thin mouths
             if 'Small' in final_layers[2]:
                 if 'Beard' in img[0]:
